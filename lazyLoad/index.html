@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LazyLoad</title>
+    <style>
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        li {
+            list-style: none;
+        }
+        img {
+            width: 520px;
+            height: 280px;
+        }
+        .img-title {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 图片列表 -->
+    <div class="wrap">‘
+        <ul class="img-list"></ul>
+    </div>
+    <!-- 数据列表 -->
+    <div style="display: none;" id="img-data">
+        [
+            {"img": "https://gitee.com/caldey/BlogImage/raw/master/img/avatar.jpg", "name": "img1"},
+            {"img": "https://gitee.com/caldey/BlogImage/raw/master/img/avatar.jpg", "name": "img2"},
+            {"img": "https://gitee.com/caldey/BlogImage/raw/master/img/avatar.jpg", "name": "img3"},
+            {"img": "https://gitee.com/caldey/BlogImage/raw/master/img/avatar.jpg", "name": "img4"},
+            {"img": "https://gitee.com/caldey/BlogImage/raw/master/img/avatar.jpg", "name": "img5"},
+            {"img": "https://gitee.com/caldey/BlogImage/raw/master/img/avatar.jpg", "name": "img6"},
+            {"img": "https://gitee.com/caldey/BlogImage/raw/master/img/avatar.jpg", "name": "img7"},
+            {"img": "https://gitee.com/caldey/BlogImage/raw/master/img/avatar.jpg", "name": "img8"},
+            {"img": "https://gitee.com/caldey/BlogImage/raw/master/img/avatar.jpg", "name": "img9"},
+            {"img": "https://gitee.com/caldey/BlogImage/raw/master/img/avatar.jpg", "name": "img10"},
+            {"img": "https://gitee.com/caldey/BlogImage/raw/master/img/avatar.jpg", "name": "img11"},
+            {"img": "https://gitee.com/caldey/BlogImage/raw/master/img/avatar.jpg", "name": "img12"}
+        ]
+    </div>
+    <!-- 渲染模版 -->
+    <script type="text/html" id="imgTpl">
+        <li class="img-item">
+            <div class="img-wrap">
+                <img src="https://gitee.com/caldey/BlogImage/raw/master/img/loading.jpg" class="list-img" data-src="{{img}}" alt="{{name}}">
+            <div>
+            <div class="img-title">
+                <h1>{{name}}</h1>
+            </div>
+        </li>
+    </script>
+    <script src="./lazyload.js"></script>
+</body>
+</html>
